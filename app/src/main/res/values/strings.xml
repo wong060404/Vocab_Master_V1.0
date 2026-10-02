@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Vocab_Master_mad_project</string>
+    <string name="app_name">Vocab Master</string>
+
+    <!-- About Me Section -->
+    <string name="about_title">Welcome to Vocab Master</string>
+    <string name="about_introduction">Vocab Master is a comprehensive language learning tool designed to empower users to expand their vocabulary systematically and effectively. Our app goes beyond simple flashcards by offering a structured environment where you can organize, study, and master new words at your own pace. Whether you are preparing for standardized tests like the SAT, GRE, or TOEFL, or simply enhancing your daily communication, Vocab Master provides the interactive platform you need to succeed.\n\nWe believe that language is the key to connection, and our mission is to provide you with the most efficient path to becoming a master of your chosen language.</string>
+
+    <string name="how_to_use_title">How to Use the App</string>
+    <string name="how_to_use_content">
+        <b>1. Create Vocabulary Groups:</b> Start by clicking the \"+\" button on the home screen to create a new group. You can name it by topic (e.g., \"Business\", \"Travel\", \"Science\") or by difficulty.\n\n
+        <b>2. Add Your Words:</b> Once a group is created, add the words you want to learn. Enter the word, its meaning, and any additional notes that help you remember it.\n\n
+        <b>3. Interactive Study:</b> Use the \"Study\" mode to flip through your words and familiarize yourself with their meanings and usage.\n\n
+        <b>4. Test Your Skills:</b>\n
+        • <b>Match Challenge:</b> A fun, fast-paced way to build quick word-meaning associations.\n
+        • <b>Spelling Quiz:</b> Master the exact spelling of every word to ensure you can use them correctly in writing.\n\n
+        <b>5. Consistent Progress:</b> Return daily to review your words. The app tracks your learning journey, helping you turn short-term memory into long-term mastery.
+    </string>
+    <string name="about_footer">Start your learning journey today and become a Vocab Master!</string>
 </resources>

@@ -15,7 +15,7 @@
         android:background="@android:color/transparent"
         app:backgroundTint="@android:color/transparent"
         app:elevation="0dp"
-        android:text="About me"
+        android:text="About the APP"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:textSize="18sp"
