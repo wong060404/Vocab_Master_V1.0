@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_quiz_text"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginBottom="8dp"
+    android:gravity="center"
+    android:textSize="16sp"
+    android:background="@android:drawable/btn_default_small"
+    android:textColor="@color/black"
+    android:padding="8dp"/>

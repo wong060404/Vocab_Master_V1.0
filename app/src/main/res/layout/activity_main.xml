@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/default_bg">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_aboutme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/transparent"
+        app:backgroundTint="@android:color/transparent"
+        app:elevation="0dp"
+        android:text="About me"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:rippleColor="#20000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <!-- Added Big Logo Image -->
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="363dp"
+            android:layout_height="238dp"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="App Logo"
+            android:src="@drawable/logo" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_tap_match"
+            android:layout_width="250dp"
+            android:layout_height="82dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button_default"
+            android:maxLines="1"
+            android:minHeight="100dp"
+            android:text="Tap to Match"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeTextType="uniform"
+            app:backgroundTint="@null"
+            app:cornerRadius="50dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_spelling"
+            android:layout_width="250dp"
+            android:layout_height="72dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_default"
+            android:maxLines="1"
+            android:minHeight="100dp"
+            android:text="Spelling"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeTextType="uniform"
+            app:backgroundTint="@null"
+            app:cornerRadius="50dp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_customize"
+        android:layout_width="219dp"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_default"
+        android:maxLines="1"
+        android:minHeight="53dp"
+        android:text="Customize vocabularies"
+        android:textAllCaps="false"
+        app:autoSizeMaxTextSize="14sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="@null"
+        app:cornerRadius="24dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_mute"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        app:icon="@android:drawable/ic_lock_silent_mode_off"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:backgroundTint="@android:color/transparent"
+        app:iconTint="@android:color/black"
+        app:elevation="0dp" />
+
+</RelativeLayout>

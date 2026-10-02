@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_english"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="English Vocab"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_pos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Part of Speech (e.g., n.)"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_chinese"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Chinese Meaning"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

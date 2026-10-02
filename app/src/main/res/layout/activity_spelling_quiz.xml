@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_bg">
+
+    <!-- Center content for the quiz (Word count, hints, input, and Submit button) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tv_word_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Word 1 / 10"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_chinese_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Chinese Meaning"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_pos_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="(n.)"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_spelling_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:hint="Type the spelling here"
+            android:inputType="textNoSuggestions"
+            android:textColor="@color/black"
+            android:textColorHint="#757575"
+            android:textSize="22sp" />
+
+        <!-- Submit button is here, below the input bar -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit_spelling"
+            android:layout_width="217dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_default"
+            android:maxLines="1"
+            android:minHeight="60dp"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeTextType="uniform"
+            app:backgroundTint="@null"
+            app:cornerRadius="30dp" />
+
+        <!-- Back to study button placed just below the Submit button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back_to_study"
+            android:layout_width="180dp"
+            android:layout_height="59dp"
+            android:background="@drawable/button_default"
+            android:elevation="8dp"
+            android:maxLines="1"
+            android:minHeight="50dp"
+            android:text="Back to study"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:translationZ="8dp"
+            app:autoSizeMaxTextSize="16sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeTextType="uniform"
+            app:backgroundTint="@null"
+            app:cornerRadius="25dp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_mute"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        app:icon="@android:drawable/ic_lock_silent_mode_off"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:backgroundTint="@android:color/transparent"
+        app:iconTint="@android:color/black"
+        app:elevation="0dp" />
+
+</RelativeLayout>
