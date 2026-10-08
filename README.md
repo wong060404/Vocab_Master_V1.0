@@ -1,8 +1,11 @@
-# 📚 Vocab Master
+> **English** | [繁體中文](README.zh-TW.md)
+
+# Vocab Master
 
 > **An Android vocabulary trainer that bridges the gap between *recognition* and *recall*.**
 > Build your own word lists, study them as flashcards, then prove you really know them — by matching or by spelling.
 
+[![ci](https://github.com/wong060404/vocab-master/actions/workflows/ci.yml/badge.svg)](https://github.com/wong060404/vocab-master/actions/workflows/ci.yml)
 ![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
 ![Language](https://img.shields.io/badge/Language-Java-007396?logo=openjdk&logoColor=white)
 ![Min SDK](https://img.shields.io/badge/minSdk-34-blue)
@@ -10,30 +13,43 @@
 ![Database](https://img.shields.io/badge/Persistence-Room%20(SQLite)-4CAF50)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
----
+## Screenshots
 
-## 📖 Table of Contents
-
-- [About the Project](#-about-the-project)
-- [Features](#-features)
-- [Screens & Navigation Flow](#-screens--navigation-flow)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [Project Structure](#-project-structure)
-- [Database Schema](#-database-schema)
-- [Built-in Vocabulary](#-built-in-vocabulary)
-- [Getting Started](#-getting-started)
-- [How to Use the App](#-how-to-use-the-app)
-- [Design Decisions](#-design-decisions)
-- [Testing](#-testing)
-- [Known Limitations & Future Work](#-known-limitations--future-work)
-- [Academic Context](#-academic-context)
-- [Acknowledgements](#-acknowledgements)
-- [License](#-license)
+<p align="center">
+  <img src="docs/screenshots/01-home.png" width="200" alt="Home menu: Tap to Match, Spelling, Customize vocabularies">
+  <img src="docs/screenshots/02-study-list.png" width="200" alt="Study list showing each word with its part of speech and Chinese meaning">
+  <img src="docs/screenshots/03-tap-to-match.png" width="200" alt="Tap to Match: pairing English words with their Chinese meanings">
+</p>
+<p align="center">
+  <img src="docs/screenshots/04-spelling.png" width="200" alt="Spelling quiz: a Chinese prompt and a free-text answer field">
+  <img src="docs/screenshots/05-customize.png" width="200" alt="Customize Vocabularies: group management and per-word deletion">
+</p>
 
 ---
 
-## 🎯 About the Project
+## Table of Contents
+
+- [Screenshots](#screenshots)
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Screens & Navigation Flow](#screens--navigation-flow)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Database Schema](#database-schema)
+- [Built-in Vocabulary](#built-in-vocabulary)
+- [Getting Started](#getting-started)
+- [How to Use the App](#how-to-use-the-app)
+- [Design Decisions](#design-decisions)
+- [Testing](#testing)
+- [Known Limitations & Future Work](#known-limitations--future-work)
+- [Academic Context](#academic-context)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
+
+---
+
+## About the Project
 
 **Vocab Master** is a single-developer Android application for learning English vocabulary with Chinese
 meanings. It was created out of a very practical observation made while working as a part-time tutor:
@@ -60,9 +76,9 @@ Vocab Master flips that around. Instead of shipping one rigid word list, the app
 
 ---
 
-## ✨ Features
+## Features
 
-### 🎮 Two Learning Modes
+### Two Learning Modes
 
 **Tap to Match (Recognition)**
 - English words are shuffled into the left column, Chinese meanings into the right.
@@ -77,7 +93,7 @@ Vocab Master flips that around. Instead of shipping one rigid word list, the app
 - Progress indicator (`Word 3 / 10`) plus instant *Correct! / Wrong! Try again.* toast feedback.
 - Completing every word leads to the success screen.
 
-### 🛠️ Customize Mode (the heart of the app)
+### Customize Mode (the heart of the app)
 
 - **Built-in groups** — `Basic`, `Enhanced`, `Elite` (hard-coded, cannot be deleted).
 - **Create unlimited custom groups** — e.g. *Food*, *Business*, *Travel*, *Week 5 Quiz*.
@@ -86,14 +102,14 @@ Vocab Master flips that around. Instead of shipping one rigid word list, the app
 - **Delete a single word**, or delete an entire group, both protected by `AlertDialog` confirmations.
 - Every list is shown sorted A→Z in a `RecyclerView` with a per-row delete button.
 
-### 🎨 UI / UX
+### UI / UX
 
 - **Card-based Study Mode** — centred `MaterialCardView`-style rows mimic physical flashcards; horizontal weights keep English, POS and Chinese neatly aligned.
 - **Auto-sizing Material Buttons** everywhere, so long academic words never clip or wrap on small phones or tablets.
 - **Consistent theming** — shared `default_bg` background, custom logo, circular gradient buttons.
 - **Rainbow gradient shader** on the *About the APP* button as a personal creative touch.
 
-### 🔊 Multimedia
+### Multimedia
 
 - Four looping background tracks: home page, study, quiz, and difficulty selection.
 - Clapping sound on the success screen.
@@ -103,7 +119,7 @@ Vocab Master flips that around. Instead of shipping one rigid word list, the app
 
 ---
 
-## 🗺 Screens & Navigation Flow
+## Screens & Navigation Flow
 
 ```
                         ┌──────────────────┐
@@ -159,7 +175,7 @@ Vocab Master flips that around. Instead of shipping one rigid word list, the app
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 | --- | --- |
@@ -189,7 +205,7 @@ agp            = "9.0.1"
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 The project follows a **Repository-inspired, layered pattern** with a clear separation of concerns,
 so that UI code never talks to SQLite directly.
@@ -231,7 +247,7 @@ so that UI code never talks to SQLite directly.
 - `AppDatabase` is a thread-safe singleton (`getInstance(Context)`), built with
   `fallbackToDestructiveMigration()` and `allowMainThreadQueries()` — the latter is a deliberate
   simplification for this coursework-sized app; a production build would move queries to a background
-  executor (see [Future Work](#-known-limitations--future-work)).
+  executor (see [Future Work](#known-limitations--future-work)).
 - `VocabManager` is also a singleton and is initialised **first thing** by `LoadingActivity`, so the
   schema exists and the seed data is ready before any other screen opens.
 - `Vocab implements Serializable`, which lets a fully shuffled quiz list be handed from
@@ -242,7 +258,7 @@ so that UI code never talks to SQLite directly.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Vocab_Master_V1.0/
@@ -308,7 +324,7 @@ Vocab_Master_V1.0/
 
 ---
 
-## 🗄 Database Schema
+## Database Schema
 
 **Database name:** `vocab_database` · **Version:** `1` · **Table:** `vocabs`
 
@@ -350,7 +366,7 @@ why they are described as *hard-coded defaults that cannot be deleted in the app
 
 ---
 
-## 📚 Built-in Vocabulary
+## Built-in Vocabulary
 
 On first launch `VocabManager.seedDatabaseIfEmpty()` populates the database with **800 words**
 (only when the table is empty, so user edits are never overwritten):
@@ -370,7 +386,7 @@ for Elite.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -413,7 +429,7 @@ configure your own signing config before publishing to Google Play.
 
 ---
 
-## 🕹 How to Use the App
+## How to Use the App
 
 ### 1. Create your own vocabulary groups
 
@@ -457,7 +473,7 @@ short-term into long-term memory.
 
 ---
 
-## 🧠 Design Decisions
+## Design Decisions
 
 | Decision | Rationale |
 | --- | --- |
@@ -473,7 +489,7 @@ short-term into long-term memory.
 
 ---
 
-## 🧪 Testing
+## Testing
 
 The project ships the standard instrumented/unit test scaffolding:
 
@@ -492,7 +508,7 @@ Android Studio with a **virtual device running Android 14 (API 34)** and `compil
 
 ---
 
-## ⚠️ Known Limitations & Future Work
+## Known Limitations & Future Work
 
 These are honest, deliberate boundaries of the current version:
 
@@ -515,7 +531,7 @@ These are honest, deliberate boundaries of the current version:
 
 ---
 
-## 🎓 Academic Context
+## Academic Context
 
 Vocab Master was developed as the **Final Project** for the course:
 
@@ -544,7 +560,7 @@ The application logic, feature design and UI implementation remain the author's 
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - [AndroidX](https://developer.android.com/jetpack/androidx) & [Material Components for Android](https://github.com/material-components/material-components-android)
 - [Room Persistence Library](https://developer.android.com/training/data-storage/room)
@@ -553,7 +569,7 @@ The application logic, feature design and UI implementation remain the author's 
 
 ---
 
-## 📄 License
+## License
 
 Released under the **MIT License** — see the [`LICENSE`](LICENSE) file for details.
 
