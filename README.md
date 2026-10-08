@@ -261,7 +261,7 @@ so that UI code never talks to SQLite directly.
 ## Project Structure
 
 ```
-Vocab_Master_V1.0/
+vocab-master/
 ├── build.gradle.kts                 # root build script
 ├── settings.gradle.kts              # rootProject.name = "Vocab_Master_mad_project"
 ├── gradle.properties
@@ -398,8 +398,8 @@ for Elite.
 
 ```bash
 # 1. Clone
-git clone https://github.com/<your-username>/Vocab_Master_V1.0.git
-cd Vocab_Master_V1.0
+git clone https://github.com/<your-username>/vocab-master.git
+cd vocab-master
 
 # 2. Build a debug APK (Linux / macOS)
 ./gradlew assembleDebug
